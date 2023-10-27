@@ -1,0 +1,27 @@
+library(networkD3)
+install.packages("htmlwidgets")
+library(htmlwidgets)
+
+
+Mercury.Network <- read.csv("~/Mercury.Network.csv")
+src<-c(Mercury.Network$Reducing.Info.Costs)
+target <-  <-c("Reducing Info Costs","Reducing Info Costs","Reducing Info Costs","Reducing Info Costs","Reducing Info Costs","Reducing Info Costs","Reducing Info Costs","Reducing Info Costs","Reducing Info Costs","Reducing Info Costs","Reducing Info Costs","Reducing Info Costs","Reducing Info Costs","Reducing Info Costs","Reducing Info Costs","Reducing Info Costs","Reducing Info Costs", "Reducing Info Costs" )
+networkData <- data.frame(src, target)
+simpleNetwork(networkData)
+
+
+
+ forceNetwork(Links = Mercury.Links$links, Nodes = Mercury.Nodes$nodes,
+                       Source = "source", Target = "target",
+                             Value = "value", NodeID = "name",
+                             Group = "group", opacity = 1.5, colourScale = JS("d3.scaleOrdinal(d3.schemeCategory20);")
+              
+       data(Mercury.Nodes)
+       data(Mercury.Links)
+              
+            mercury.test<-forceNetwork(Links = Mercury.Links,  Mercury.Nodes,
+                                        Source = "Source", Target = "Target",
+                                       Value = "Value", NodeID = "Name",
+                                       Group = "Group", opacity = 0.95, colourScale = JS("d3.scaleOrdinal(d3.schemeCategory20);"), fontSize = 20)
+              
+         
